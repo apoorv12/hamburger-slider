@@ -27,26 +27,48 @@ h1{
 }
 
 .navlist{
-    padding: 10rem 2rem;
+    padding-top: 8rem;
     background: brown;
     /* Below two code is to make navlist vertical */
     height: 100%;
-    width: 100px;
+    width: 200px;
     /* Following to codes make navlist on top on hamburger */
     position: absolute;
     top: 0px;
     /* z-index gives order in stacking */
     z-index: 0;
+    /* this code will hide navbar */
+    left: -200px;
+    /* this will show transition effect */
+    transition: left ease-in 0.3s;
 }
 .navlist li{
     list-style: none;
     padding-bottom: 2rem;
+    padding-left: 2rem;
 }
 .navlist li a{
     text-decoration: none;
     color: white;
     font-size: 1.2em;
 }
-.display{
-    display: none;
+
+.navlist.open{
+    left: 0px;
+}
+
+.burger.open div:nth-child(1){
+    transform: rotate(45deg) translateY(12px);
+}
+.burger.open div:nth-child(2){
+    opacity: 0;
+    width: 0;
+}
+.burger.open div:nth-child(3){
+    transform: rotate(-45deg) translateY(-11px);;
+}
+
+/* transition of hamburger */
+.burger div{
+    transition: all ease-in 0.3s;
 }
